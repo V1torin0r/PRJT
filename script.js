@@ -1,19 +1,19 @@
 document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio do formulário padrão
+    event.preventDefault(); 
     
-    // Obtém os valores do formulário
-    var nome = document.getElementById('NOME COMPLETO').value; 
-    var data_nas = document.getElementById('DATA DE NASCIMENTO').value;
-    var numero_wpp = document.getElementById('NUMERO DE WHATSAPP').value;
-    var endereco = document.getElementById('ENDEREÇO').value;
-    var alergia = document.getElementById('Você possui alergia a algum tiopo de medicamento? Se sim, qual?').value;
-    var contato_fam = document.getElementById('Contato de algum familiar').value;
-    var tam_camisa = document.getElementById('Tamanho da Camisa').value;
+
+    var nome = document.getElementById('nome').value; 
+    var data_nascimento = document.getElementById('data_nascimento').value;
+    var numero_whatsapp = document.getElementById('numero_whatsapp').value;
+    var endereco = document.getElementById('endereco').value;
+    var alergia = document.getElementById('alergia').value;
+    var contato_famamilia = document.getElementById('contato_famamilia').value;
+    var tamanho_da_camisa = document.getElementById('tamanho_da_camisa').value;
     
-    // Cria uma linha CSV com os valores do formulário
-    var csvRow = nome + ',' + data_nas + ',' + numero_wpp + ',' + endereco + ',' + alergia + ',' + contato_fam + ',' + tam_camisa + '\n';
+
+    var csvRow = nome + '|' + data_nascimento + '|' + numero_whatsapp + '|' + endereco + '|' + alergia + '|' + contato_famamilia + '|' + tamanho_da_camisa + '\n';
     
-    // Cria ou atualiza o arquivo CSV
+
     var blob = new Blob([csvRow], { type: 'text/csv' });
     var link = document.createElement('a');
     link.setAttribute('href', URL.createObjectURL(blob));
